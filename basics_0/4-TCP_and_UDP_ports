@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script displays all active IPv4 and IPv6 listening sockets, and their PIDs.
+
+sudo netstat -lpn
