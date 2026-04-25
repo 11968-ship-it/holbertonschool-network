@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Listens on port 98 of the localhost
+
+# -l: tells netcat to listen for an incoming connection
+# -p: specifies the local port number
+# -n: prevents DNS lookups (strictly use IP/Port)
+nc -l 98
