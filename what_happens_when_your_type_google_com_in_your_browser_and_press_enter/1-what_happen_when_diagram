@@ -1,0 +1,68 @@
+# What Happens When You Type https://www.google.com in Your Browser and Press Enter?
+
+When a user types **https://www.google.com** into a web browser and presses Enter, several components work together to deliver the requested web page.
+
+## 1. DNS Resolution
+
+The browser first needs to find Google's IP address. It sends a DNS query to a DNS server, which translates the domain name (**[www.google.com](http://www.google.com)**) into an IP address.
+
+## 2. Establishing a Secure Connection
+
+Using the returned IP address, the browser initiates an HTTPS connection on **port 443**. HTTPS uses **TLS/SSL encryption** to secure the communication between the browser and Google's servers.
+
+## 3. Firewall Inspection
+
+The request passes through a firewall, which filters malicious or unauthorized traffic before allowing the request to continue.
+
+## 4. Load Balancing
+
+The request reaches a load balancer. The load balancer distributes incoming traffic across multiple servers to improve performance, reliability, and availability.
+
+## 5. Web Server
+
+The selected web server receives the request and determines how it should be handled.
+
+## 6. Application Server
+
+The web server forwards the request to an application server. The application server contains the business logic required to process the request.
+
+## 7. Database Query
+
+If data is needed, the application server sends a query to a database. The database retrieves the requested information and returns it to the application server.
+
+## 8. Generating the Response
+
+The application server generates the web page and sends it back to the web server.
+
+## 9. Returning the Web Page
+
+The web server sends the encrypted response back to the browser, which renders the page for the user.
+
+### Diagram Flow
+
+Browser
+↓
+DNS Resolution
+↓
+HTTPS Request (TLS/SSL Encryption, Port 443)
+↓
+Firewall
+↓
+Load Balancer
+↓
+Web Server
+↓
+Application Server
+↓
+Database
+↓
+Application Server
+↓
+Web Server
+↓
+Browser
+
+
+```
+https://imgur.com/a/creLUtz
+```
