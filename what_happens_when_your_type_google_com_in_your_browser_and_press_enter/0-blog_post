@@ -1,0 +1,154 @@
+# What Happens When You Type https://www.google.com and Press Enter?
+
+Typing a URL in your browser triggers multiple systems working together in milliseconds.
+
+Below is a simple, step-by-step breakdown.
+
+---
+
+## 1. DNS Resolution
+
+The browser needs the IP address of `www.google.com`.
+
+Steps:
+- Check browser cache
+- Check OS cache
+- Query DNS resolver (ISP or public DNS)
+- Resolver contacts:
+  - Root DNS server
+  - `.com` TLD server
+  - Google’s authoritative DNS server
+- IP address is returned
+
+Now the browser knows where to connect.
+
+---
+
+## 2. TCP/IP Connection
+
+The browser establishes a TCP connection with the server.
+
+Three-way handshake:
+1. SYN
+2. SYN-ACK
+3. ACK
+
+Connection is now established.
+
+IP handles routing.
+TCP ensures reliable delivery.
+
+---
+
+## 3. Firewall Filtering
+
+The request passes through:
+
+- Local machine firewall
+- Router firewall
+- ISP firewall
+- Google’s firewall
+
+If the request is valid, it continues.
+
+---
+
+## 4. HTTPS / TLS Handshake
+
+Because the URL starts with `https`, encryption is required.
+
+Steps:
+- Browser requests secure connection
+- Server sends SSL certificate
+- Browser verifies certificate
+- Encryption keys are exchanged
+- Secure session begins
+
+All communication is now encrypted.
+
+---
+
+## 5. Load Balancer
+
+The request reaches Google’s load balancer.
+
+The load balancer:
+- Distributes traffic
+- Selects an available server
+- Ensures high availability
+
+The request is forwarded to one web server.
+
+---
+
+## 6. Web Server
+
+The web server:
+
+- Receives the HTTPS request
+- Processes HTTP headers
+- Serves static content (if applicable)
+- Forwards dynamic requests to the application server
+
+---
+
+## 7. Application Server
+
+The application server:
+
+- Executes backend logic
+- Processes the search request
+- Communicates with databases
+
+---
+
+## 8. Database
+
+The database:
+
+- Stores indexed web pages
+- Stores user data (if needed)
+- Returns relevant search results
+
+Data is sent back to the application server.
+
+---
+
+## 9. Server Response
+
+The server sends:
+
+- HTTP response (HTML, CSS, JavaScript)
+- Through encrypted TLS connection
+- Using TCP for reliable delivery
+
+---
+
+## 10. Browser Rendering
+
+The browser:
+
+- Parses HTML
+- Builds the DOM
+- Loads CSS and JavaScript
+- Renders the page
+
+The Google homepage appears.
+
+---
+
+## Summary
+
+When you press Enter:
+
+- DNS resolves the domain
+- TCP establishes connection
+- TLS secures communication
+- Firewall filters traffic
+- Load balancer distributes request
+- Web server handles HTTP
+- Application server runs logic
+- Database retrieves data
+- Browser renders the result
+
+All in milliseconds.
